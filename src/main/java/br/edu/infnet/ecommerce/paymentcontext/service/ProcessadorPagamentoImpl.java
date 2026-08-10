@@ -1,12 +1,13 @@
-package br.edu.infnet.ecommerce.payment;
+package br.edu.infnet.ecommerce.paymentcontext.domain.models;
 
+import br.edu.infnet.ecommerce.paymentcontext.domain.models.enums.FormaPagamento;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
 @Component
-public class ProcessadorPagamento {
+public class ProcessadorPagamentoImpl implements br.edu.infnet.ecommerce.paymentcontext.service.ProcessadorPagamento {
 
     /*
      * Implementação concreta usada diretamente pelos services.
@@ -14,14 +15,14 @@ public class ProcessadorPagamento {
      */
     public ResultadoProcessamento processar(
             BigDecimal valor,
-            String formaPagamento,
+            FormaPagamento formaPagamento,
             String numeroCartao
     ) {
         if (valor == null || valor.compareTo(BigDecimal.ZERO) <= 0) {
             return ResultadoProcessamento.recusado("VALOR_INVALIDO");
         }
 
-        if (!"CARTAO".equalsIgnoreCase(formaPagamento)) {
+        if (formaPagamento != FormaPagamento.CARTAO_CREDITO) {
             return ResultadoProcessamento.recusado("FORMA_PAGAMENTO_NAO_SUPORTADA");
         }
 

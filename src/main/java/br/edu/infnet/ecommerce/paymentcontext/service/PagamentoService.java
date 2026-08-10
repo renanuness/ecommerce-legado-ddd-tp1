@@ -1,10 +1,10 @@
-package br.edu.infnet.ecommerce.service;
+package br.edu.infnet.ecommerce.paymentcontext.payment.service;
 
 import br.edu.infnet.ecommerce.entity.Pagamento;
 import br.edu.infnet.ecommerce.entity.Pedido;
 import br.edu.infnet.ecommerce.entity.Usuario;
-import br.edu.infnet.ecommerce.payment.ProcessadorPagamento;
-import br.edu.infnet.ecommerce.payment.ResultadoProcessamento;
+import br.edu.infnet.ecommerce.paymentcontext.payment.ProcessadorPagamento;
+import br.edu.infnet.ecommerce.paymentcontext.payment.ResultadoProcessamento;
 import br.edu.infnet.ecommerce.repository.PagamentoRepository;
 import br.edu.infnet.ecommerce.repository.PedidoRepository;
 import br.edu.infnet.ecommerce.repository.UsuarioRepository;
