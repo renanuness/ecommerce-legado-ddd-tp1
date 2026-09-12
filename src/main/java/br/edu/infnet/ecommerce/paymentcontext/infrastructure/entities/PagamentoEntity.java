@@ -1,5 +1,7 @@
-package br.edu.infnet.ecommerce.entity;
+package br.edu.infnet.ecommerce.paymentcontext.infrastructure.entities;
 
+import br.edu.infnet.ecommerce.entity.Pedido;
+import br.edu.infnet.ecommerce.entity.Usuario;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -117,5 +119,19 @@ public class Pagamento {
 
     public void setProcessadoEm(LocalDateTime processadoEm) {
         this.processadoEm = processadoEm;
+    }
+
+    public Pagamento doDominio(br.edu.infnet.ecommerce.paymentcontext.domain.models.Pagamento objetoDominio){
+        Pagamento pagamento = new Pagamento();
+//        pagamento.setPedido(objetoDominio.);
+//        pagamento.setUsuario(usuarioPersistido);
+//        pagamento.setValor(objetoDominio.valor());
+//        pagamento.setFormaPagamento(objetoDominio.formaPagamento());
+//        pagamento.setNumeroCartaoMascarado(objetoDominio.cartaoDeCreditoMascarado());
+//        pagamento.setStatus(objetoDominio.status());
+//        pagamento.setMotivo();
+//        pagamento.setCodigoAutorizacao(resultado.codigoAutorizacao());
+//        pagamento.setProcessadoEm(LocalDateTime.now());
+        return pagamento;
     }
 }
